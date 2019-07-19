@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "@babylonjs/core": "^4.0.3",
+    "lodash": "^4.17.15"
+  },
+  "scripts": {
+    "dev": "webpack-dev-server",
+    "deploy": "webpack",
+    "prettier": "prettier --write src/*"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.0.1",
+    "prettier": "^1.18.2",
+    "webpack": "^4.36.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
+  }
+}

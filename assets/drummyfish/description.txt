@@ -1,0 +1,3 @@
+128x128 CC0 (public domain) hand painted cartoony texture pack
+
+Downloaded from https://gitlab.com/drummyfish/minetest-texturepack
