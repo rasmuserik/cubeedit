@@ -1,11 +1,12 @@
 {
   "dependencies": {
     "@babylonjs/core": "^4.0.3",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "noa-engine": "git+https://github.com/rasmuserik/noa.git"
   },
   "scripts": {
     "dev": "webpack-dev-server",
-    "deploy": "webpack",
+    "build": "webpack",
     "prettier": "prettier --write src/*"
   },
   "devDependencies": {

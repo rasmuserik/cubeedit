@@ -31,7 +31,7 @@ window.BABYLON = {
   Vector3,
   VertexData
 };
-const noaEngine = require("../../noa");
+const noaEngine = require("noa-engine");
 
 const noa = noaEngine({
   debug: true,
