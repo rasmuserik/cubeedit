@@ -33,11 +33,14 @@ window.BABYLON = {
 };
 const noaEngine = require("noa-engine");
 
-let lines = [];
-let env = { x: Math.random() };
+let log = () => undefined;
+(function setupDebug() {
+window.LOG = {};
+window.LOG.lines = ['hello'];
+window.LOG.vars = { x: Math.random() };
 const anyAsString = o =>
   typeof o === "object" ? JSON.stringify(o) : String(o);
-(function setupDebug() {
+
   const logElem = document.createElement("div");
   const varElem = document.createElement("div");
   const style = {
@@ -45,7 +48,7 @@ const anyAsString = o =>
     zIndex: 100,
     top: "0px",
     "text-shadow": "0px 0px 1px #fff",
-    font: "18px sans-serif",
+    font: "12px sans-serif",
     "pointer-events": "none",
     "white-space": "nowrap",
     overflow: "hidden"
@@ -61,30 +64,28 @@ const anyAsString = o =>
   document.body.append(varElem);
   setInterval(() => {
     const htmlEscape = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
-    if (lines.length > 30) {
-      lines = lines.slice(lines.length - 30);
+    const numberOfLines = 40;
+    if (window.LOG.lines.length > numberOfLines) {
+      window.LOG.lines = window.LOG.lines.slice(window.LOG.lines.length - numberOfLines);
     }
-    logElem.innerHTML = lines.map(htmlEscape).join("<br>");
+    logElem.innerHTML = window.LOG.lines.map(htmlEscape).join("<br>");
     const varLines = [];
-    for (let k in env) {
-      if (env[k] !== undefined) {
-        varLines.push(k + ": " + anyAsString(env[k]));
+    for (let k in window.LOG.vars) {
+      if (window.LOG.vars[k] !== undefined) {
+        varLines.push(k + ": " + anyAsString(window.LOG.vars[k]));
       }
+      log(k, varLines);
     }
     varElem.innerHTML = varLines.map(htmlEscape).join("<br>");
   }, 300);
-})();
-function log() {
-  lines.push(
+
+log = () => window.LOG.lines.push(
     Array.from(arguments)
       .map(anyAsString)
       .join(" ")
   );
-}
-window.log = log;
-for (let i = 0; i < 45; ++i) {
-  log("hello world", i);
-}
+window.LOG.log = log;
+})();
 
 const noa = noaEngine({
   debug: true,
