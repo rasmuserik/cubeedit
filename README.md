@@ -2,6 +2,8 @@
 
 **Under development, not working yet!** 
 
+Prototype deployed to https://cubeedit.solsort.com
+
 Just an app skeleton so far.
 
 The purpose is to create a simple online tool for creating and sharing 3d block based content.

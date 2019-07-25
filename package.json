@@ -6,7 +6,7 @@
   },
   "scripts": {
     "dev": "webpack-dev-server",
-    "build": "webpack",
+    "deploy": "rm -rf dist && cp -a public_html dist && webpack && gh-pages -d dist",
     "prettier": "prettier --write src/*"
   },
   "devDependencies": {
