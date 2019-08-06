@@ -1,3 +1,4 @@
+/*
 import { Scene } from "@babylonjs/core/scene";
 import { FreeCamera } from "@babylonjs/core/Cameras/freeCamera";
 import { Octree } from "@babylonjs/core/Culling/Octrees/octree";
@@ -31,7 +32,9 @@ window.BABYLON = {
   Vector3,
   VertexData
 };
-const noaEngine = require("noa-engine");
+*/
+import Engine from 'noa-engine'
+
 
 let log = () => undefined;
 (function setupDebug() {
@@ -87,7 +90,7 @@ log = () => window.LOG.lines.push(
 window.LOG.log = log;
 })();
 
-const noa = noaEngine({
+const noa = new Engine({
   debug: true,
   texturePath: "assets/drummyfish/"
 });

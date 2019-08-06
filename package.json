@@ -2,7 +2,7 @@
   "dependencies": {
     "@babylonjs/core": "^4.0.3",
     "lodash": "^4.17.15",
-    "noa-engine": "git+https://github.com/rasmuserik/noa.git"
+    "noa-engine": "github:andyhall/noa#es6-modules-babylon-as-peer"
   },
   "scripts": {
     "dev": "webpack-dev-server",
